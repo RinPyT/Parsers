@@ -56,5 +56,8 @@ for count in range(1, count_req(cabel_search) + 1):
             class_='result-table').find_all('tr', class_=False)
 
         for cabel in cabels_data:
-            cabel_tds = cabel.find_all('td', class_=True)
-            print(cabel_tds[0])
+          try:
+            cabel_tds = cabel.find_all('td')
+            title = (cabel_tds[0].text)
+            print(title)
+          except:print('пусто')
