@@ -1,4 +1,3 @@
-from logging import exception
 import requests
 from bs4 import BeautifulSoup
 import csv
@@ -50,7 +49,7 @@ for count in range(1, count_req(cabel_search) + 1):
             )
         )
 
-    # собираем все теги tr в tbody
+    # собираем все теги tr 
     cabels_data = soup.find(
         class_='result-table').find_all('tr', class_=False)
 
@@ -74,4 +73,4 @@ for count in range(1, count_req(cabel_search) + 1):
                     )
                 )
         except:
-            next
+            continue
